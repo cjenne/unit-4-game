@@ -1,0 +1,82 @@
+<!-- The player will have to guess the answer, just like in Word Guess. This time, though, the player will guess with numbers instead of letters. 
+Here's how the app works:
+
+There will be four crystals displayed as buttons on the page.
+The player will be shown a random number at the start of the game.
+When the player clicks on a crystal, it will add a specific amount of points to the player's total score. 
+Your game will hide this amount until the player clicks a crystal.
+When they do click one, update the player's score counter.
+The player wins if their total score matches the random number from the beginning of the game.
+The player loses if their score goes above the random number.
+The game restarts whenever the player wins or loses.
+When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
+The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
+
+
+Option 1 Game design notes
+
+
+The random number shown at the start of the game should be between 19 - 120.
+Each crystal should have a random hidden value between 1 - 12. -->
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link href="https://fonts.googleapis.com/css?family=Economica" rel="stylesheet">
+
+    <title>Crystal Collector</title>
+</head>
+
+<body background="assets/images/background.jpg">
+    <div class="container-fluid text-left" style="font-family: 'Tangerine', serif; font-size: 48px; font-weight: bolder; background-color: dimgray; color: whitesmoke; margin: 20px 0px 20px 0px;">
+        Crystals Collector!
+    </div>
+    <div class="container-fluid text-left" style="font-family: 'Economica', sans-serif; font-size: 20px; font-weight: bold; background-color: lightgrey; color:black; width: 90%;">
+        <p>Click the Crystals to match your total to the number listed below.</p>
+        <p>Each Crystal has an incremental amount assigned to add to your total ...</p>
+        <p>but be aware the crystal amount changes from game to game.</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col container d-flex align-items-center img-fluid height:auto">
+                <img src="assets/images/majic8.jpg" alt="#">
+                <div class="centered randomNumber" style="color: white; padding-left: 102px; font-weight: bolder; position: absolute;"></div>
+            </div>
+            <div class="col container-fluid" style="font-family: 'Economica', sans-serif; font-weight: bold; background-color: lightgrey; color:black; width: 35%">
+                <div class="row" style="font-size: 20px">
+                    <p>Your total score:</p>
+                </div>
+                <div class="row" style="font-size: 150px">
+                    <div class="totalScore" style="padding-left: 20px"></div>
+                </div>
+            </div>
+            <div class="col container-fluid" style="font-family: 'Economica', sans-serif; font-weight: bold; font-size: 20px; background-color: dimgray; color:black; width: 35%;">
+                <div class="wins"></div>
+                <div class="losses"></div>
+            </div>
+            <div class="container-fluid" style="padding-top: 50px">
+                <div class="row">
+                    <div class="col">
+                        <img src="assets/images/bluecrystal.jpg" class="img-fluid crystalImg" id = "crystalOne" alt="blue">
+                    </div>
+                    <div class="col">
+                        <img src="assets/images/purplecrystal.jpg" class="img-fluid crystalImg" id = "crystalTwo" alt="purple">
+                    </div>
+                    <div class="col">
+                        <img src="assets/images/whitecrystal.jpg" class="img-fluid crystalImg" id = "crystalThree" alt="white">
+                    </div>
+                    <div class="col">
+                        <img src="assets/images/yellowcrystal.jpg" class="img-fluid crystalImg" id = "crystalFour" alt="yellow">
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div> 
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
